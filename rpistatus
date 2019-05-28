@@ -1,0 +1,20 @@
+#!/bin/bash
+
+for pi in {01..20}
+do ping -c 1 rpi$pi &> /dev/null
+if [ $? -eq 0 ]; then
+echo "rpi$pi is alive"
+else
+echo "rpi$pi is dead"
+fi
+done
+
+
+ping -c 1 rpimpw &> /dev/null
+if [ $? -eq 0 ]; then
+echo "rpimpw is alive"
+else
+echo "rpimpw is dead"
+fi
+exit
+
